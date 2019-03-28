@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SpirographVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SpirographVC" customModule="Spirograph" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ctc-lf-dxe">
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="38" minValue="3" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="vtP-1g-hr9">
+                                        <rect key="frame" x="-2" y="0.0" width="379" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="717-UH-0mN"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="setStator:" destination="BYZ-38-t0r" eventType="valueChanged" id="1fj-wX-Uwf"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="8" minValue="3" maxValue="80" translatesAutoresizingMaskIntoConstraints="NO" id="9br-Va-3Le">
+                                        <rect key="frame" x="-2" y="46" width="379" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="p8y-aH-nHM"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="setRotor:" destination="BYZ-38-t0r" eventType="valueChanged" id="DlS-cm-Q6X"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.90000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="vFB-lK-2WX">
+                                        <rect key="frame" x="-2" y="92" width="379" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="wC9-h3-egk"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="setPenLocation:" destination="BYZ-38-t0r" eventType="valueChanged" id="v7q-pg-ev0"/>
+                                        </connections>
+                                    </slider>
+                                    <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="URv-Y1-VxZ" userLabel="SpirographView" customClass="SpirographView" customModule="Spirograph" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="138" width="375" height="529"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="M">
+                                                <integer key="value" value="58"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="N">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="F">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="fillColor">
+                                                <color key="value" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="strokeColor">
+                                                <color key="value" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="4mH-Jl-kHp" appends="YES" id="SuU-ZX-WC0"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4mH-Jl-kHp" appends="YES" id="Rcr-dY-xsf"/>
+                                </connections>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ctc-lf-dxe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="MRf-fb-AiT"/>
+                            <constraint firstItem="ctc-lf-dxe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="QFR-bw-bdB"/>
+                            <constraint firstItem="ctc-lf-dxe" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eh7-UC-Jgb"/>
+                            <constraint firstItem="ctc-lf-dxe" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="fcA-2R-pni"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="spirographView" destination="URv-Y1-VxZ" id="N3x-a6-AU2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="4mH-Jl-kHp">
+                    <connections>
+                        <action selector="drawCompletion:" destination="BYZ-38-t0r" id="RU5-EF-ZjO"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
